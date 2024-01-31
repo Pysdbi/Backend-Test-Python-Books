@@ -1,0 +1,49 @@
+# query_get_all_books.graphql
+query GetAllBooks {
+  books {
+    title
+    author {
+      name
+    }
+  }
+}
+
+# query_get_books_by_author.graphql
+query GetBooksByAuthor {
+  books(authorIds: [1, 2]) {
+    title
+    author {
+      name
+    }
+  }
+}
+
+# query_search_books.graphql
+query SearchBooks {
+  books(search: "Adventures") {
+    title
+    author {
+      name
+    }
+  }
+}
+
+# query_get_limited_books.graphql
+query GetLimitedBooks {
+  books(limit: 3) {
+    title
+    author {
+      name
+    }
+  }
+}
+
+# query_combined.graphql
+query CombinedQuery {
+  books(authorIds: [1, 2], search: "man", limit: 8) {
+    title
+    author {
+      name
+    }
+  }
+}
